@@ -53,10 +53,10 @@ Accepts an array of keys to ignore in the output if they are not a part of the r
 
 #### bufferencoding
 
-**Since: 0.4.3**  
-**Default: false**  
-**See: [Buffer.toString](https://nodejs.org/api/buffer.html#buffer_buf_tostring_encoding_start_end)**  
-**Resolves: [Issue #1](https://github.com/Waxolunist/metalsmith-writemetadata/issues/1)**  
+**Since: 0.4.3**
+**Default: false**
+**See: [Buffer.toString](https://nodejs.org/api/buffer.html#buffer_buf_tostring_encoding_start_end)**
+**Resolves: [Issue #1](https://github.com/Waxolunist/metalsmith-writemetadata/issues/1)**
 
 ```js
 Metalsmith(__dirname)
@@ -65,7 +65,7 @@ Metalsmith(__dirname)
 }));
 ```
 
-If this value is set, the contents field which is internally represented as a Buffer, will be converted to a string 
+If this value is set, the contents field which is internally represented as a Buffer, will be converted to a string
 by calling the method Buffer.toString with the encoding specified in the options.
 
 #### collections
@@ -105,9 +105,20 @@ output is a parameter for collections, determining the desired output. If **asOb
   total: 9,
   type: 'list',
   result: [...]
-  
+
 }
 ```
+
+#### yaml
+
+```js
+Metalsmith(__dirname)
+.use(writemetadata({
+  yaml: true
+}));
+```
+
+Accepts as paramater a boolean which triggers yaml output instead of JSON.
 
 ## Complete example
 
